@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { YOUTUBE_API } from "../utils/constant";
 import VedioCard from "./VedioCard";
+import { Link } from "react-router-dom";
 const VideoContainer = () => {
   const [videos, setvideo] = useState([]);
   const api = YOUTUBE_API;
@@ -11,7 +12,7 @@ const VideoContainer = () => {
         const res = await data.json();
 
         setvideo(res.items);
-        console.log(res.items);
+        
       } catch (error) {
         console.error("Error fetching data:sss", error);
       }
@@ -20,7 +21,7 @@ const VideoContainer = () => {
     fetchData();
   }, []);
 
-  return <div className="flex gap-1 flex-wrap">{videos[0] &&videos.map((item, index)=>(<VedioCard props={videos[index]} />)) }</div>;
+  return <div className="flex gap-5 flex-wrap">{videos &&videos.map((item, index)=>(<Link to={"/watch?v="+item.id} key={item.id} ><VedioCard props={videos[index]} /></Link>)) }</div>;
 };
 
 export default VideoContainer;

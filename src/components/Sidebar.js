@@ -9,7 +9,7 @@ const Sidebar = () => {
   if(!isMenuOpen) return null;
 
   return (
-    <div className="bg-gray-200 p-4 rounded-lg w-48 mt-3 mx-6 shadow-xl">
+    <div className="bg-gray-200 p-4 rounded-lg w-52 mt-3 h-[30rem] mx-6 shadow-xl">
       <div className="mb-6">
         <h1 className="text-xl font-bold mb-4">Subscription</h1>
         <ul>
