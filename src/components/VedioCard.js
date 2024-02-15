@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const VedioCard = ({props}) => {
-  const {statistics, snippet}=props;
+  const { snippet,statistics}=props;
   const givenTimestamp = new Date(snippet.publishedAt).getTime();
   const currentTimestamp = new Date().getTime();
   const timeDifferenceMs=currentTimestamp-givenTimestamp;
@@ -18,7 +18,8 @@ const VedioCard = ({props}) => {
         <img src="" alt="" />
         <div><h2 className='font-semibold'>{snippet.title}</h2>
         <p className='font-bold'>{snippet.channelTitle}</p>
-        <p className='grey'>{hours}hr ago  <span>{statistics.viewCount} views</span></p>
+        {statistics.viewCount?<p className='grey'>{hours}hr ago  <span>{statistics.viewCount} views</span></p>:null}
+        
         </div>
 
         

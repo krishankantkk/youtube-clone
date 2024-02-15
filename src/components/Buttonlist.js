@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import ButtonItem from './ButtonItem';
 
 const Buttonlist = () => {
-  const buttonItem=['all', 'comedy', 'music','movies','kapil sharma','bigboss'];
+  const buttonItem=['All', 'Comedy', 'Music','Movies','Game','Bollywood','Bigboss','Cricket','Cooking','Education','Engineering','Business', ];
 
   return (
     <div  className='flex'>

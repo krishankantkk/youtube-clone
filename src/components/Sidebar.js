@@ -13,10 +13,7 @@ const Sidebar = () => {
       <div className="mb-6">
         <h1 className="text-xl font-bold mb-4">Subscription</h1>
         <ul>
-          <li className="flex items-center mb-2">
-            <FontAwesomeIcon icon={faNewspaper} className="mr-2" />
-            Subscription
-          </li>
+        
           <li className="flex items-center mb-2">
             <FontAwesomeIcon icon={faGamepad} className="mr-2" />
             Game

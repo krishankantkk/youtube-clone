@@ -1,4 +1,3 @@
-
 import './App.css';
 import Body from './components/Body';
 import Header from './components/Header';
@@ -8,31 +7,35 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import WatchpPage from './components/WatchpPage';
 import MainContainer from './components/MainContainer';
 
-const appRouter=createBrowserRouter([
+const appRouter = createBrowserRouter([
   {
-    path:'/',
-    element:<Body/>,
-    children:[{
-      path:'/',
-      element:<MainContainer/>
-    },
-    {
-      path:'watch',
-      element:<WatchpPage/>
-    }
-  ]
+    path: '/',
+    element: (
+      <>
+        <Header /> 
+        <Body />
+      </>
+    ),
+    children: [
+      {
+        path: '/',
+        element: <MainContainer />
+      },
+      {
+        path: 'watch',
+        element: <WatchpPage />
+      }
+    ]
   }
-])
+]);
+
 function App() {
   return (
     <div>
       <Provider store={store}>
-      <Header/>
-      <RouterProvider router={appRouter}/>
+        <RouterProvider router={appRouter} />
       </Provider>
-      
     </div>
-    
   );
 }
 
