@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const VedioCard = ({props}) => {
   const {statistics, snippet}=props;
   const givenTimestamp = new Date(snippet.publishedAt).getTime();
@@ -7,6 +8,7 @@ const VedioCard = ({props}) => {
   const timeDifferenceMs=currentTimestamp-givenTimestamp;
   const hours = Math.floor(timeDifferenceMs / (1000 * 60 * 60)) % 24;
   return (
+    <div>
     <div className='mt-3 w-72 h-90 shadow-xl '>
       <div>
       <img  className="w-72 h-64 rounded-xl" src={snippet.thumbnails.high.url} alt="thumbnail" />
@@ -21,7 +23,9 @@ const VedioCard = ({props}) => {
 
         
       </div>
+      </div>
     </div>
+ 
   )
 }
 

@@ -28,7 +28,7 @@ const Header = () => {
     const data = await fetch(YOUTUBE_QUERY_SEARCH_API + searchQuery);
     const res = await data.json();
     setautoSugestionList(res[1]);
-    console.log(res[1]);
+    
     dispatch(cachesResult(
       {
         [searchQuery]:res[1]
