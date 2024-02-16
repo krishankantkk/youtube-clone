@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Sidebar from './Sidebar';
-import { Outlet } from 'react-router-dom';
-
+import React, { useEffect, useState } from 'react';
+import ChatMessage from './ChatMessage';
 import { useSelector } from 'react-redux';
 
-const Body = () => {
+const LiveChats = () => {
   const themeFromStore = useSelector((store) => store.app.isTheme);
   const [theme, setThemeState] = useState(themeFromStore ? "bg-white" : "bg-black");
 
@@ -17,11 +15,13 @@ const Body = () => {
   }, [themeFromStore]);
 
   return (
-    <div className={`flex ${theme}`}>
-      <Sidebar/>
-      <Outlet />
+    <div className={`w-full h-[470px] border border-${theme} overflow-hidden overflow-y-scroll rounded-lg ${theme}`}>
+      <ChatMessage />
+      <ChatMessage />
+      <ChatMessage />
+     
     </div>
   );
 };
 
-export default Body;
+export default LiveChats;

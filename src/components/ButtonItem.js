@@ -8,6 +8,7 @@ const ButtonItem = ({ name }) => {
 
   const handlesSearch=()=>{
     dispatch(setSearchKey(name));
+
   }
   return (
     <div className='mt-3 px-2'>

@@ -16,6 +16,7 @@ const VideoContainer = () => {
         const data = await fetch(api);
         const res = await data.json();
         setVideos(res.items);
+        console.log("load")
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -27,12 +28,13 @@ const VideoContainer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-      
+      if(searchKey.searchKey!=""){
         const data = await fetch(`${YOUTUBE_SEARCH_QUERY_VIDEO_API}?q=${searchKey.searchKey}&key=${API_KEY}`);
         const res = await data.json();
         console.log(searchKey);
-        console.log(res);
+        console.log("search key load");
         setVideos(res.items);
+      }
       } catch (error) {
         console.error("Error fetching search data:", error);
       }
