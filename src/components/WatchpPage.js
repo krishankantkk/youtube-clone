@@ -6,7 +6,7 @@ import CommentsContainer from "./CommentsContainer";
 import LiveChats from "./LiveChat";
 const WatchpPage = () => {
   const [searchParams] = useSearchParams();
-console.log("this is page");
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(closeMenu());

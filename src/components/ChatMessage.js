@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-const ChatMessage = () => {
+const ChatMessage = ({name, text}) => {
   const themeFromStore = useSelector((store) => store.app.isTheme);
   const [theme, setThemeState] = useState(themeFromStore ? "white" : "black");
 
@@ -21,8 +21,8 @@ const ChatMessage = () => {
         alt="user image"
       />
       <div className='flex items-center'>
-        <span className={`font-bold mr-2 text-${theme === 'white' ? 'black' : 'white'}`}>name</span>
-        <span className={`text-${theme === 'white' ? 'black' : 'white'}`}>text</span>
+        <span className={`font-bold mr-2 text-${theme === 'white' ? 'black' : 'white'}`}>{name}</span>
+        <span className={`text-${theme === 'white' ? 'black' : 'white'}`}>{text}</span>
       </div>
     </div>
   );
