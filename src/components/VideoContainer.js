@@ -16,7 +16,6 @@ const VideoContainer = () => {
         const data = await fetch(api);
         const res = await data.json();
         setVideos(res.items);
-        console.log("load")
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -31,8 +30,6 @@ const VideoContainer = () => {
       if(searchKey.searchKey!=""){
         const data = await fetch(`${YOUTUBE_SEARCH_QUERY_VIDEO_API}?q=${searchKey.searchKey}&key=${API_KEY}`);
         const res = await data.json();
-        console.log(searchKey);
-        console.log("search key load");
         setVideos(res.items);
       }
       } catch (error) {
@@ -44,7 +41,7 @@ const VideoContainer = () => {
   }, [searchKey]);
 
   return (
-    <div className="flex gap-5 flex-wrap">
+    <div className="flex flex-col sm:flex-row gap-5 md:flex-row md:flex-wrap sm:gap-3 flex-wrap sm:w-full">
       {videos &&
         videos.map((item, index) => (
           <Link to={"/watch?v=" + item.id} key={item.id}>

@@ -25,7 +25,7 @@ dispatch(setSearchKey(item));
   if(!isMenuOpen) return null;
 
   return (
-    <div className={`p-4 rounded-lg mt-3 w-[15rem] h-[30rem] mx-6 shadow-xl bg-${theme} text-${theme==='gray'?'black':'white'}`}>
+    <div className={`p-4 rounded-lg mt-3 w-[15rem] hidden sm:block h-[30rem] mx-6 shadow-xl bg-${theme} text-${theme==='gray'?'black':'white'}`}>
       <div className="mb-6">
         <h1 className="text-xl font-bold mb-4 ">You</h1>
         <ul>

@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import Sidebar from './Sidebar';
-import { Outlet } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import Sidebar from "./Sidebar";
+import { Outlet } from "react-router-dom";
 
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 const Body = () => {
   const themeFromStore = useSelector((store) => store.app.isTheme);
-  const [theme, setThemeState] = useState(themeFromStore ? "bg-white" : "bg-black");
+  const [theme, setThemeState] = useState(
+    themeFromStore ? "bg-white" : "bg-black"
+  );
 
   useEffect(() => {
     if (themeFromStore) {
@@ -18,7 +20,7 @@ const Body = () => {
 
   return (
     <div className={`flex ${theme}`}>
-      <Sidebar/>
+      <Sidebar />
       <Outlet />
     </div>
   );

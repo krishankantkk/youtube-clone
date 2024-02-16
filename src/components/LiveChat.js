@@ -34,13 +34,16 @@ return ()=>clearInterval(interval);
 
   return (
     <div >
-       <div className={`w-full h-[470px] border overflow-y-scroll flex flex-col-reverse rounded-lg ${theme}`}>  {
+      <h1 className=' font-bold w-full bg-black pl-5 pb-2 text-white rounded-lg'>Top Chats</h1>
+      
+       <div className={` w-full h-[470px] border overflow-y-scroll flex flex-col-reverse rounded-lg ${theme}`}>
+        {
             
             Chatmessages.map((c, i) => (
               <ChatMessage key={i} name={c.name} text={c.text} />
             ))
           }</div>
-     <form className='w-full p-2 ml-2 border-black'
+     <form className='w-full p-2 ml-2 border-black flex-row sm:flex-row'
      onSubmit={(e)=>{
       e.preventDefault();
       dispatch(
@@ -54,7 +57,7 @@ return ()=>clearInterval(interval);
      
      >
       <input 
-      className='px-2 w-96 h-10 border-1 border border-black'
+      className='px-2 w-44 sm:w-96 h-10 border-1 border border-black'
       placeholder='type your Message'
       value={liveMessage}
       onChange={(e)=>{

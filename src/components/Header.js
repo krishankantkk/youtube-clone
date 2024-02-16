@@ -50,7 +50,7 @@ const Header = () => {
     console.log(item);
     dispatch(setSearchKey(item));
     setSearchQuery(item);
-    setShowSuggestion(false); // Hide suggestions after selecting an item
+    setShowSuggestion(false);
   };
  const ToggleTheme=()=>{
   dispatch(setTheme());
@@ -75,17 +75,18 @@ const Header = () => {
         </Link>
         
       </div>
-      <div>
+      <div className="flex">
         <input
           type="text"
           value={searchQuery}
           onFocus={() => setShowSuggestion(true)}
           onBlur={() => setShowSuggestion(false)}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className={`border rounded-l-full pl-5 w-[30rem] h-[2rem] bg-${ColorTheme} text-${ColorTheme==='white'?'black':'white'}`}
+          className={`border hidden  sm:block lg:block rounded-l-full pl-5 sm:w-[30rem] h-[2rem] bg-${ColorTheme} text-${ColorTheme==='white'?'black':'white'}`}
+
         />
         <button
-          className={`border rounded-r-full w-16 h-[2rem] text-center hover:bg-gray-600 bg-${ColorTheme}` }
+          className={`border rounded-r-full w-16 h-[2rem] text-center hidden sm:block lg:block hover:bg-gray-600 bg-${ColorTheme}` }
           onClick={() => handlesSearchKey(searchQuery)}
         >
           🔍
