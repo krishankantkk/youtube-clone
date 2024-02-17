@@ -75,36 +75,39 @@ const Header = () => {
         </Link>
         
       </div>
+      <div className="relative"> 
       <div className="flex">
-        <input
-          type="text"
-          value={searchQuery}
-          onFocus={() => setShowSuggestion(true)}
-          onBlur={() => setShowSuggestion(false)}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className={`border hidden  sm:block lg:block rounded-l-full pl-5 sm:w-[30rem] h-[2rem] bg-${ColorTheme} text-${ColorTheme==='white'?'black':'white'}`}
-
-        />
-        <button
-          className={`border rounded-r-full w-16 h-[2rem] text-center hidden sm:block lg:block hover:bg-gray-600 bg-${ColorTheme}` }
-          onClick={() => handlesSearchKey(searchQuery)}
-        >
-          🔍
-        </button>
-        {showSuggestion && (
-          <div className={`absolute bg-${ColorTheme} w-[30rem] rounded-sm border gap-3`}>
-            <ul className="p-2">
-              {autoSuggestionList.map((item) => (
-                <div key={item} >
-                  <li className={`gap-2 hover:bg-blue-200 text-${ColorTheme==='white'?'black':'white'} cursor-pointer bg-${ColorTheme}`} onMouseDown={() => handlesSearchKey(item)}>
-                    🔍{item}
-                  </li>
-                </div>
-              ))}
-            </ul>
+  <input
+    type="text"
+    value={searchQuery}
+    onFocus={() => setShowSuggestion(true)}
+    onBlur={() => setShowSuggestion(false)}
+    onChange={(e) => setSearchQuery(e.target.value)}
+    className={`border hidden sm:block lg:block rounded-l-full pl-5 sm:w-[30rem] h-[2rem] bg-${ColorTheme} text-${ColorTheme==='white'?'black':'white'}`}
+  />
+  <button
+    className={`border rounded-r-full w-16 h-[2rem] text-center hidden sm:block lg:block hover:bg-gray-600 bg-${ColorTheme}` }
+    onClick={() => handlesSearchKey(searchQuery)}
+  >
+    🔍
+  </button>
+  </div>
+  
+  {showSuggestion && (
+    <div className={`absolute bg-${ColorTheme} w-[30rem] rounded-sm border gap-3 top-[2.5rem]`}> {/* Adjust top positioning */}
+      <ul className="p-2">
+        {autoSuggestionList.map((item) => (
+          <div key={item}>
+            <li className={`gap-2 hover:bg-blue-200 text-${ColorTheme==='white'?'black':'white'} cursor-pointer bg-${ColorTheme}`} onMouseDown={() => handlesSearchKey(item)}>
+              🔍{item}
+            </li>
           </div>
-        )}
-      </div>
+        ))}
+      </ul>
+    </div>
+  )}
+</div>
+
       <div className="flex justify-center">
 
         <button className= "mr-2 h-10 w-10 items-center pb-2" onClick={()=>ToggleTheme()}>{theme?<FontAwesomeIcon  icon={faSun} />:<FontAwesomeIcon className="text-white" icon={faSun} />}</button>
