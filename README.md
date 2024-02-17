@@ -36,6 +36,10 @@ Welcome to My Youtube Project, a modern video-sharing platform designed for seam
 - Designed a user-friendly interface with intuitive navigation and responsive layout, enhancing overall usability and accessibility for all users.
 
 
+https://github.com/krishankantkk/youtube-clone/assets/93835021/525c6acd-7e46-41fd-8d54-8aedb51b0d0e
+
+
+
 ## Tools
 
 The following tools were instrumental in simplifying the development process for the Youtube Project:
